@@ -23,7 +23,9 @@ web players used on the Shield and Fire OS versions.
 6. On the TV, scan the TMDB setup QR and select TMDB token. Enter your
    API Read Access Token using the Roku keyboard. If the Roku mobile
    remote offers text entry on your model, you can enter it there.
-   The token is only needed for the catalog.
+   Select Continue. The token is only needed for the catalog. See
+   https://otosanx.github.io/streambert-tv-guide/#tmdb for free personal
+   account setup and the exact credential to copy.
 7. Choose Trending or Search to browse titles. Open video URL is for
    direct HTTPS video files or streams you have permission to play.
 

@@ -1,0 +1,33 @@
+FREE PERSONAL TMDB SETUP FOR STREAMBERT
+
+TMDB supplies titles, artwork, and search data. The API is free for
+non-commercial use with attribution. Its credentials enable the
+catalog. They provide no movies or subscription access.
+
+1. Create a free account at https://www.themoviedb.org/signup and verify
+   your email if prompted, or sign in to your existing account.
+2. Open https://www.themoviedb.org/settings/api or scan the QR in
+   Streambert. If you haven't requested access, select the request
+   link and choose Personal use only (the developer or non-commercial
+   option if the label differs). Accept the terms, fill out the
+   applicable required fields, and submit. For a description, you can
+   use: Personal use of the Streambert TV catalog to browse and search
+   movie and TV metadata.
+3. Return to Settings > API and copy the full API Read Access Token.
+   It is the long credential that usually starts with eyJ. The short
+   API Key on that page is a different credential. Keep your token
+   private. You can use it on your own TVs.
+4. Android TV / Fire OS: select the token field on the TV and paste
+   with the atvTools phone keyboard. If the token is already in your
+   TV clipboard, choose Paste from TV clipboard. Select Save and
+   continue.
+5. Roku: choose TMDB token, enter the token using the Roku keyboard,
+   then select Continue. If your Roku mobile remote offers text entry
+   for this field, you can try it. Test Trending or Search afterward.
+
+Use a desktop browser if the request form is difficult on a phone.
+If your token is rejected, check the TV's internet connection and
+copy the entire API Read Access Token again.
+
+Website: https://otosanx.github.io/streambert-tv-guide/#tmdb
+TMDB FAQ: https://developer.themoviedb.org/docs/faq

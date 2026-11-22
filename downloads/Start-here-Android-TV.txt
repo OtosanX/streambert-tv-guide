@@ -1,0 +1,71 @@
+INSTALL STREAMBERT ON ANDROID TV OR GOOGLE TV
+
+Use Streambert-TV-Fire-OS.apk. The shared APK works on NVIDIA Shield
+running Android TV and is also packaged for Fire OS. Other Android TV
+models may have different settings. The APK is installed on the TV.
+
+1. Save the APK to Files or Downloads on your iPhone or Android phone.
+   If you downloaded the kit, extract the ZIP first. Install atvTools
+   from https://atvtools.app/ and connect the phone and TV to the same
+   home network. On iPhone, allow Local Network access if prompted.
+   Check your phone's app store for pricing.
+2. On Google TV go to Settings > System > About. On Android TV look
+   under Settings > Device Preferences > About. Highlight Android TV
+   OS build or Build and press the center button seven times. Go back
+   one screen and open Developer options.
+3. Choose the connection type your TV offers.
+   - Wireless debugging: turn it on, then open Pair device with pairing
+     code. In atvTools, use wireless pairing if offered and enter the
+     TV's pairing address, port, and six-digit code. If unavailable,
+     use the computer fallback below.
+   - Network debugging: turn it on and select the TV in atvTools, or
+     add its address manually. Find the address in Network & Internet
+     or About > Status. Use the TV's port, or 5555 if using older network
+     debugging without a displayed port. Accept the prompt on the TV.
+4. In atvTools, select your TV, then go to Tools > Install and select
+   Streambert-TV-Fire-OS.apk. Open Streambert from Apps, or look in
+   Settings > Apps > See all apps > Streambert > Open.
+5. Follow Start-here-TMDB.txt to get your free personal access token.
+   Paste it with the atvTools phone keyboard, choose Save and continue,
+   and check that the catalog and search load. Turn off debugging after
+   setup.
+
+COMPUTER FALLBACK
+
+Download and extract Google's Platform-Tools:
+https://developer.android.com/tools/releases/platform-tools
+Put the APK in the platform-tools folder. Open a terminal there.
+In Windows PowerShell replace adb with .\adb. On macOS/Linux use ./adb
+if adb is outside your PATH.
+
+- Wireless debugging: open Pair device with pairing code on the TV
+  and run adb pair TV_IP:PAIRING_PORT with the address shown in that
+  dialog. Enter the six-digit pairing code at the prompt.
+- Run adb connect TV_IP:CONNECTION_PORT with the address and port on the
+  main Wireless debugging screen. This port can differ from the
+  pairing port. Older Network debugging skips pairing and typically
+  uses 5555, or the port shown by the TV.
+- Run adb devices. When your TV appears with status device, run
+  adb -s TV_IP:CONNECTION_PORT install -r Streambert-TV-Fire-OS.apk
+  using the exact TV address and port shown in the list.
+
+IF THE TV DOESN'T CONNECT
+
+- Check the home network, avoid guest Wi-Fi, and make sure the pairing
+  code hasn't expired. USB debugging alone may not allow Wi-Fi access.
+- For a phone-only fallback with an Android phone, install Send Files
+  to TV on the TV and phone. Choose Receive on the TV, Send on the
+  phone, then select the APK and TV. Open the APK in Downloads on the
+  TV with a file manager that can open APKs. If prompted, grant Install
+  unknown apps to that file manager and turn it off after installing.
+  https://play.google.com/store/apps/details?id=com.yablio.sendfilestotv
+- If your TV supports USB storage and has a file manager that can open
+  APKs, copy the APK to a USB drive and open it on the TV. If prompted,
+  grant Install unknown apps to that file manager for the installation
+  and turn the permission off afterward.
+- If the TV reports an existing-app signing conflict, keep the old
+  install until you understand what will be lost. Removing the old
+  copy can erase its settings and history.
+
+Website: https://otosanx.github.io/streambert-tv-guide/#android
+Google ADB guide: https://developer.android.com/tools/adb
