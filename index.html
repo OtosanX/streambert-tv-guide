@@ -53,10 +53,10 @@
 
     <section id="android" class="shell section guide" aria-labelledby="android-title">
       <h2 id="android-title">Android TV and Google TV</h2>
-      <p>Use this section for a TV or streaming box that runs Android TV or Google TV. The shared APK has Fire OS in its filename and was tested on an NVIDIA Shield running Android TV.</p>
+      <p>Use this section for a TV or streaming box that runs Android TV or Google TV. The shared APK has Fire OS in its filename. Next-episode autoplay in the regular player was confirmed on NVIDIA Shield.</p>
       <div class="actions">
-        <a class="button primary" href="downloads/Streambert-Fire-TV-Phone-Kit.zip?v=2" download="Streambert-Android-and-Fire-TV-Kit.zip">Download APK and both guides</a>
-        <a class="button subtle" href="downloads/Streambert-TV-Fire-OS.apk" download>Download APK only</a>
+        <a class="button primary" href="downloads/Streambert-Fire-TV-Phone-Kit.zip?v=3" download="Streambert-Android-and-Fire-TV-Kit.zip">Download APK and both guides</a>
+        <a class="button subtle" href="downloads/Streambert-TV-Fire-OS.apk?v=3" download>Download APK only</a>
         <a class="button subtle" href="downloads/Start-here-Android-TV.txt">Read the Android TV checklist</a>
       </div>
       <h3>Install from an iPhone or Android phone</h3>
@@ -89,8 +89,8 @@
       <h2 id="fire-title">Fire TV (Fire OS)</h2>
       <p>Use an iPhone or Android phone and the same home network as your TV. On a Fire TV, check <strong>Settings → My Fire TV → About</strong>. If it says <strong>Vega OS</strong>, use the <a href="#other">Vega section</a>.</p>
       <div class="actions">
-        <a class="button primary" href="downloads/Streambert-Fire-TV-Phone-Kit.zip?v=2" download>Download kit with Fire TV instructions</a>
-        <a class="button subtle" href="downloads/Streambert-TV-Fire-OS.apk" download>APK only</a>
+        <a class="button primary" href="downloads/Streambert-Fire-TV-Phone-Kit.zip?v=3" download>Download kit with Fire TV instructions</a>
+        <a class="button subtle" href="downloads/Streambert-TV-Fire-OS.apk?v=3" download>APK only</a>
         <a class="button subtle" href="downloads/Start-here-Fire-TV.txt">Read the Fire TV checklist</a>
       </div>
       <ol class="steps">
@@ -99,7 +99,7 @@
         <li><strong>Connect from atvTools.</strong> Get it on <a href="https://apps.apple.com/app/atvtools/id1661419573">iPhone</a> or <a href="https://play.google.com/store/apps/details?id=dev.vodik7.atvtools">Android</a>. Select your TV and accept the debugging prompt. If it doesn’t appear, enter the TV’s network address in the app.</li>
         <li><strong>Send the APK.</strong> In atvTools, choose <strong>Tools → Install</strong> and select the APK. Open Streambert from your TV’s apps list, then follow <a href="#tmdb">TMDB setup</a>. Turn debugging off when you’re done.</li>
       </ol>
-      <p class="fine">The APK was checked on NVIDIA Shield. Fire OS playback still needs a device test. The iPhone phone tool is a paid app. <a href="https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device">Amazon’s Fire TV instructions</a></p>
+      <p class="fine">This is the same APK used on Android TV. Fire OS playback and next-episode autoplay still need a Fire TV device test. The iPhone phone tool is a paid app. <a href="https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device">Amazon’s Fire TV instructions</a></p>
     </section>
 
     <section id="roku" class="shell section guide" aria-labelledby="roku-title">
@@ -164,12 +164,13 @@
       <details><summary>My phone can’t find the TV</summary><p>Check that both devices are on the same home network. Guest networks can isolate devices. Confirm debugging is on and try entering the TV’s network address directly.</p></details>
       <details><summary>The TV says the file can’t be installed</summary><p>Check the TV’s operating system and use its matching file. Fire OS needs the extracted APK. Roku’s developer installer needs the original Roku ZIP. If Android reports a signing conflict, save your settings before removing the older copy.</p></details>
       <details><summary>Streambert rejected my TMDB token</summary><p>Open TMDB Settings → API and copy the entire <strong>API Read Access Token</strong> again. Make sure the TV has internet access. If your Roku accepts the token but playback doesn’t start when you browse a title, use <strong>Open video URL</strong> for direct playback. Roku’s catalog is a browsing and search preview.</p></details>
+      <details><summary>The regular player didn’t start the next episode</summary><p>In Streambert settings, enable <strong>Autoplay Next Episode</strong> and set <strong>Countdown Duration</strong> above zero. Start a regular TV episode with another aired episode in the same season and let it finish. Autoplay needs the playback source to expose the end of the video. Press Back during the countdown to cancel.</p></details>
     </section>
   </main>
   <footer id="credits" class="shell footer">
     <h2>Credits and source</h2>
     <p>I only modified the TV experience. I don’t own any of the content available through the app. Use sources you have permission to access.</p>
-    <p><a href="https://github.com/truelockmc/streambert">Original Streambert project</a> · <a href="downloads/Streambert-Phone-Kit-Source.zip" download>TV patch source</a> · <a href="#top">Back to top</a></p>
+    <p><a href="https://github.com/truelockmc/streambert">Original Streambert project</a> · <a href="downloads/Streambert-Phone-Kit-Source.zip?v=3" download>TV patch source</a> · <a href="#top">Back to top</a></p>
     <p class="fine">Catalog data from TMDB. Streaming availability data provided by JustWatch.</p>
   </footer>
 </body>

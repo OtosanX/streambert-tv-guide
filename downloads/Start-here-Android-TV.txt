@@ -30,6 +30,14 @@ models may have different settings. The APK is installed on the TV.
    and check that the catalog and search load. Turn off debugging after
    setup.
 
+TEST NEXT-EPISODE AUTOPLAY
+
+In Streambert settings, turn on Autoplay Next Episode and set Countdown
+Duration above zero. Choose a regular TV episode with another aired
+episode in the same season. Seek near the end and let the episode finish.
+The next episode should open after the countdown. Press Back during
+the countdown to cancel. This was confirmed on NVIDIA Shield.
+
 COMPUTER FALLBACK
 
 Download and extract Google's Platform-Tools:
