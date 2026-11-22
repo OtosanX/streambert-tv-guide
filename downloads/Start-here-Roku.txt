@@ -1,0 +1,35 @@
+STREAMBERT PREVIEW FOR ROKU TV
+
+Use Streambert-Roku-Preview.zip as the installer file. Do not unzip it.
+This is a developer preview. It was compiled and packaged, but it has
+not been tested on your older TV. It can browse and search TMDB and play
+direct HTTPS HLS (.m3u8) or MP4 video links. It cannot open the embedded
+web players used on the Shield and Fire OS versions.
+
+1. Check Settings > System > About on your Roku to find its model and
+   Roku OS version. Connect the TV and phone to the same home network.
+2. With the Roku remote, press Home three times, Up twice, then Right,
+   Left, Right, Left, Right.
+3. Write down the local address shown on the TV. Select Enable
+   installer, accept Roku's developer terms, and create a developer
+   password. The TV restarts.
+4. On the phone, open a web browser and type the address from the TV.
+   If needed, type http:// before the numbers. Sign in as rokudev
+   with the password you just created.
+5. In the Development Application Installer, tap Upload, choose the
+   original Streambert-Roku-Preview.zip from Files or Downloads, and
+   tap Install. Roku only allows one sideloaded developer app at a
+   time. Installing this preview replaces a previous developer app.
+6. On the TV, scan the TMDB setup QR and select TMDB token. Enter your
+   API Read Access Token using the Roku keyboard. If the Roku mobile
+   remote offers text entry on your model, you can enter it there.
+   The token is only needed for the catalog.
+7. Choose Trending or Search to browse titles. Open video URL is for
+   direct HTTPS video files or streams you have permission to play.
+
+If the phone cannot open the installer page, use a computer browser
+on the same network. If the developer screen does not appear or the
+preview does not launch, note the model and Roku OS version.
+
+Roku's official setup guide:
+https://developer.roku.com/dev/docs/developer-setup

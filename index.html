@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="Install the community Streambert TV build from a phone. Guides for Fire OS, Android TV, Roku, Samsung, LG, and Vega.">
+  <title>Streambert TV Install Guide</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell header-content">
+      <a class="wordmark" href="#top"><span class="mark" aria-hidden="true">▶</span> Streambert <span class="wordmark-tv">TV</span></a>
+      <nav aria-label="Page sections">
+        <a href="#devices">Devices</a>
+        <a href="#tmdb">TMDB setup</a>
+        <a href="#credits">Credits</a>
+      </nav>
+    </div>
+  </header>
+  <main id="top">
+    <section class="shell hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">COMMUNITY TV BUILD</p>
+        <h1 id="page-title">Install Streambert<br>on your TV.</h1>
+        <p class="intro">Pick your device, get the right download, and follow the steps from your phone or computer.</p>
+        <div class="actions">
+          <a class="button primary" href="#fire">Install on Fire OS or Android TV</a>
+          <a class="button subtle" href="#devices">Find my device</a>
+        </div>
+      </div>
+      <div class="device-graphic" aria-hidden="true">
+        <div class="screen"><div class="screen-top"></div><div class="posters"><i></i><i></i><i></i></div><div class="screen-line"></div></div>
+        <div class="remote"><div class="dpad"><b></b></div><i></i><i></i></div>
+      </div>
+    </section>
+    <aside class="shell notice" aria-label="Ownership notice">
+      <strong>Ownership and credits</strong>
+      <p>I don’t own any of the movies, shows, artwork, or streams. I only modified the app for TV use. The original app is <a href="https://github.com/truelockmc/streambert">Streambert by truelockmc</a>. Content rights belong to their respective owners.</p>
+    </aside>
+
+    <section id="devices" class="shell section" aria-labelledby="devices-title">
+      <h2 id="devices-title">Choose your device</h2>
+      <div class="device-list">
+        <a href="#fire"><span>Fire OS / Android TV</span><small>Phone install</small></a>
+        <a href="#roku"><span>Roku TV</span><small>Developer preview</small></a>
+        <a href="#samsung"><span>Samsung TV</span><small>2020+ target</small></a>
+        <a href="#other"><span>LG / Vega</span><small>Developer previews</small></a>
+      </div>
+    </section>
+
+    <section id="fire" class="shell section guide" aria-labelledby="fire-title">
+      <span class="badge ready">Phone install</span>
+      <h2 id="fire-title">Fire OS and Android TV</h2>
+      <p>Use an iPhone or Android phone and the same home network as your TV. On a Fire TV, check <strong>Settings → My Fire TV → About</strong>. If it says <strong>Vega OS</strong>, use the <a href="#other">Vega section</a>.</p>
+      <div class="actions">
+        <a class="button primary" href="downloads/Streambert-Fire-TV-Phone-Kit.zip" download>Download phone kit</a>
+        <a class="button subtle" href="downloads/Streambert-TV-Fire-OS.apk" download>APK only</a>
+      </div>
+      <ol class="steps">
+        <li><strong>Save the APK to your phone.</strong> If you downloaded the kit, extract it first. Keep the APK in Files or Downloads.</li>
+        <li><strong>Enable debugging on your TV.</strong> For Fire OS, open <strong>My Fire TV → Developer Options → ADB Debugging</strong>. If the menu is hidden, highlight the device name under <strong>About</strong>, press Select seven times, then go Back. On Android TV or Google TV, look for Network or Wireless Debugging instead.</li>
+        <li><strong>Connect from atvTools.</strong> Get it on <a href="https://apps.apple.com/app/atvtools/id1661419573">iPhone</a> or <a href="https://play.google.com/store/apps/details?id=dev.vodik7.atvtools">Android</a>. Select your TV and accept the debugging prompt. If it doesn’t appear, enter the TV’s network address in the app.</li>
+        <li><strong>Send the APK.</strong> In atvTools, choose <strong>Tools → Install</strong> and select the APK. Open Streambert from your TV’s apps list, then follow <a href="#tmdb">TMDB setup</a>. Turn debugging off when you’re done.</li>
+      </ol>
+      <p class="fine">The APK was checked on NVIDIA Shield. Fire OS playback still needs a device test. The iPhone phone tool is a paid app. <a href="https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device">Amazon’s Fire TV instructions</a></p>
+    </section>
+
+    <section id="roku" class="shell section guide" aria-labelledby="roku-title">
+      <span class="badge">Developer preview</span>
+      <h2 id="roku-title">Roku TV</h2>
+      <p>The Roku preview can browse and search TMDB and play direct HTTPS HLS or MP4 links. Streambert’s embedded web players are unavailable on Roku. The package compiled successfully. Older Roku models still need testing.</p>
+      <div class="actions">
+        <a class="button primary" href="downloads/Streambert-Roku-Preview.zip" download>Download Roku ZIP</a>
+        <a class="button subtle" href="downloads/Start-here-Roku.txt">Read the Roku guide</a>
+      </div>
+      <ol class="steps">
+        <li><strong>Enable the installer.</strong> With the Roku remote, press <strong>Home</strong> three times, <strong>Up</strong> twice, then <strong>Right, Left, Right, Left, Right</strong>. Note the address shown, enable the installer, and set a developer password.</li>
+        <li><strong>Open the address on your phone.</strong> Stay on the same network. Sign in as <code>rokudev</code> using the password you chose.</li>
+        <li><strong>Upload the ZIP as-is.</strong> Tap <strong>Upload</strong>, choose the original Roku ZIP, then tap <strong>Install</strong>. Roku has one developer-app slot, so this replaces any previously sideloaded preview.</li>
+      </ol>
+      <p class="fine"><a href="https://developer.roku.com/dev/docs/developer-setup">Roku’s official developer installation instructions</a></p>
+    </section>
+
+    <section id="samsung" class="shell section guide" aria-labelledby="samsung-title">
+      <span class="badge">Computer and signing required</span>
+      <h2 id="samsung-title">Samsung TVs from 2020</h2>
+      <p>The Samsung project targets Tizen 5.5 and its older browser. The catalog and QR setup passed a browser test. Real-TV playback and remote behavior still need testing.</p>
+      <div class="actions"><a class="button subtle" href="downloads/Streambert-TV-Developer-Previews.zip" download>Download developer projects</a></div>
+      <ol class="steps">
+        <li>Extract the archive on a computer and open the <strong>Samsung-Tizen</strong> project in Tizen Studio with the Samsung TV and Certificate extensions.</li>
+        <li>Enable Developer Mode on the TV and connect it through Device Manager.</li>
+        <li>Sign the project with a Samsung certificate profile for that TV, then install and run it.</li>
+      </ol>
+      <p class="fine"><a href="https://developer.samsung.com/smarttv/develop/getting-started/using-sdk/tv-device.html">Samsung device setup</a> · <a href="https://developer.samsung.com/smarttv/develop/specifications/web-engine-specifications.html">Samsung model-year specifications</a></p>
+    </section>
+
+    <section id="other" class="shell section guide" aria-labelledby="other-title">
+      <span class="badge">Developer previews</span>
+      <h2 id="other-title">LG webOS and Fire TV on Vega</h2>
+      <div class="split">
+        <div><h3>LG webOS</h3><p>The archive includes a built <code>.ipk</code>. Use LG’s Developer Mode app and the webOS tools on a computer. TV playback still needs testing.</p><a href="https://webostv.developer.lge.com/develop/getting-started/developer-mode-app">LG Developer Mode guide</a></div>
+        <div><h3>Amazon Vega OS</h3><p>The archive includes WebView starter code. Building and signing a <code>.vpkg</code> requires Amazon’s Vega SDK on a supported Mac or Ubuntu computer.</p><a href="https://developer.amazon.com/docs/vega/latest/install-vega-sdk">Vega SDK setup</a></div>
+      </div>
+      <a class="button subtle" href="downloads/Streambert-TV-Developer-Previews.zip" download>Download developer projects</a>
+    </section>
+
+    <section id="tmdb" class="shell section guide" aria-labelledby="tmdb-title">
+      <div class="tmdb">
+        <div>
+          <h2 id="tmdb-title">Set up TMDB once</h2>
+          <p>TMDB provides titles, artwork, and search results. The app keeps its setup steps on the TV until your token is accepted.</p>
+          <ol class="steps">
+            <li>Scan the QR or open <a href="https://www.themoviedb.org/settings/api">TMDB API settings</a> on your phone.</li>
+            <li>Sign in, request a key if needed, then copy the long <strong>API Read Access Token</strong>.</li>
+            <li>On Fire OS or Android TV, select the token field and paste it with the atvTools phone keyboard. Then select <strong>Save and continue</strong> on the TV.</li>
+          </ol>
+          <a href="https://github.com/truelockmc/streambert/blob/main/tmdb-tutorial.md">See the original TMDB walkthrough</a>
+        </div>
+        <figure><img src="tmdb-setup-qr.png" width="160" height="160" alt="QR code for TMDB API settings"><figcaption>Scan with your phone camera</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="shell section" aria-labelledby="help-title">
+      <h2 id="help-title">Troubleshooting</h2>
+      <details><summary>My phone can’t find the TV</summary><p>Check that both devices are on the same home network. Guest networks can isolate devices. Confirm debugging is on and try entering the TV’s network address directly.</p></details>
+      <details><summary>The TV says the file can’t be installed</summary><p>Check the TV’s operating system and use its matching file. Fire OS needs the extracted APK. Roku’s developer installer needs the original Roku ZIP. If Android reports a signing conflict, save your settings before removing the older copy.</p></details>
+    </section>
+  </main>
+  <footer id="credits" class="shell footer">
+    <h2>Credits and source</h2>
+    <p>I only modified the TV experience. I don’t own any of the content available through the app. Use sources you have permission to access.</p>
+    <p><a href="https://github.com/truelockmc/streambert">Original Streambert project</a> · <a href="downloads/Streambert-Phone-Kit-Source.zip" download>TV patch source</a> · <a href="#top">Back to top</a></p>
+    <p class="fine">Catalog data from TMDB. Streaming availability data provided by JustWatch.</p>
+  </footer>
+</body>
+</html>
