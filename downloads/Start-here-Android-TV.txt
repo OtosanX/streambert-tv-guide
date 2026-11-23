@@ -24,6 +24,12 @@ episode in the same season. Seek near the end and let the episode finish.
 The next episode should open after the countdown. Press Back during
 the countdown to cancel. This was confirmed on NVIDIA Shield.
 
+ANIME PLAYER CONTROLS
+
+Show the player controls and select SUB or DUB beside Captions and
+Settings to switch audio. Press Back to close the server menu and
+return focus to Server Selection. Both were tested on NVIDIA Shield.
+
 FREE COMPUTER INSTALL
 
 Download and extract Google's Platform-Tools:
