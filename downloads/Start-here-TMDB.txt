@@ -17,10 +17,12 @@ catalog. They provide no movies or subscription access.
    It is the long credential that usually starts with eyJ. The short
    API Key on that page is a different credential. Keep your token
    private. You can use it on your own TVs.
-4. Android TV / Fire OS: select the token field on the TV and paste
-   with the atvTools phone keyboard. If the token is already in your
-   TV clipboard, choose Paste from TV clipboard. Select Save and
-   continue.
+4. Android TV / Fire OS: select the token field on the TV, then try
+   the keyboard in the free Google TV phone remote or Amazon Fire TV
+   phone remote for your device. Paste the token if offered. Otherwise
+   use the TV keyboard or a supported physical keyboard. Select Save
+   and continue. Pairing and keyboard instructions:
+   https://otosanx.github.io/streambert-tv-guide/#tmdb
 5. Roku: choose TMDB token, enter the token using the Roku keyboard,
    then select Continue. If your Roku mobile remote offers text entry
    for this field, you can try it. Test Trending or Search afterward.

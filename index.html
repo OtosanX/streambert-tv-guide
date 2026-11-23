@@ -43,8 +43,8 @@
     <section id="devices" class="shell section" aria-labelledby="devices-title">
       <h2 id="devices-title">Choose your device</h2>
       <div class="device-list">
-        <a href="#android"><span>Android TV / Google TV</span><small>Phone or computer</small></a>
-        <a href="#fire"><span>Fire TV (Fire OS)</span><small>Phone install</small></a>
+        <a href="#android"><span>Android TV / Google TV</span><small>TV, phone, or computer</small></a>
+        <a href="#fire"><span>Fire TV (Fire OS)</span><small>TV or computer</small></a>
         <a href="#roku"><span>Roku TV</span><small>Developer preview</small></a>
         <a href="#samsung"><span>Samsung TV</span><small>2020+ target</small></a>
         <a href="#other"><span>LG / Vega</span><small>Developer previews</small></a>
@@ -55,29 +55,29 @@
       <h2 id="android-title">Android TV and Google TV</h2>
       <p>Use this section for a TV or streaming box that runs Android TV or Google TV. The shared APK has Fire OS in its filename. Next-episode autoplay in the regular player was confirmed on NVIDIA Shield.</p>
       <div class="actions">
-        <a class="button primary" href="downloads/Streambert-Fire-TV-Phone-Kit.zip?v=3" download="Streambert-Android-and-Fire-TV-Kit.zip">Download APK and both guides</a>
+        <a class="button primary" href="downloads/Streambert-Fire-TV-Phone-Kit.zip?v=4" download="Streambert-Android-and-Fire-TV-Kit.zip">Download APK and both guides</a>
         <a class="button subtle" href="downloads/Streambert-TV-Fire-OS.apk?v=3" download>Download APK only</a>
         <a class="button subtle" href="downloads/Start-here-Android-TV.txt">Read the Android TV checklist</a>
       </div>
-      <h3>Install from an iPhone or Android phone</h3>
+      <h3>Install free with the TV remote</h3>
       <ol class="steps">
-        <li><strong>Get the files ready.</strong> Save the APK on your phone. If you downloaded the kit, extract it first. Install <a href="https://atvtools.app/">atvTools</a> on your phone and connect it to the same home network as the TV. On iPhone, allow Local Network access when prompted. Check your app store for pricing.</li>
-        <li><strong>Unlock Developer options on the TV.</strong> Go to <strong>Settings → System → About</strong> on Google TV or <strong>Settings → Device Preferences → About</strong> on Android TV. Highlight <strong>Android TV OS build</strong> or <strong>Build</strong> and press the remote’s center button seven times. Go back to <strong>System</strong> or <strong>Device Preferences</strong> and open <strong>Developer options</strong>.</li>
-        <li><strong>Connect using the option your TV shows.</strong> With <strong>Wireless debugging</strong>, turn it on and select <strong>Pair device with pairing code</strong>. Use the wireless pairing option in atvTools if available, and enter the address, pairing port, and code shown by the TV. If your TV has <strong>Network debugging</strong> instead, turn it on, select the TV in atvTools or add its address manually, and accept the prompt on the TV. Use the displayed port or <code>5555</code> for older network-debugging setups without a displayed port. The TV’s address is usually under <strong>Network &amp; Internet</strong> or <strong>About → Status</strong>.</li>
-        <li><strong>Install and open.</strong> In atvTools, select the connected TV, then choose <strong>Tools → Install</strong> and select <code>Streambert-TV-Fire-OS.apk</code>. Open Streambert from <strong>Apps</strong> or <strong>Settings → Apps → See all apps → Streambert → Open</strong>.</li>
-        <li><strong>Load the catalog.</strong> Follow the <a href="#tmdb">free TMDB setup</a>, paste the token while atvTools is connected, then turn off debugging. Confirm the home rows load and try a search.</li>
+        <li>On the TV, install <strong>Downloader by AFTVnews</strong> from Google Play if available. Open it, enter <code>otosanx.github.io/streambert-tv-guide/</code> in its address field, then choose <strong>Install on Android TV → Download APK only</strong> on the guide.</li>
+        <li>Open the downloaded APK. If asked, open the settings prompt and allow <strong>Install unknown apps</strong> for Downloader. Return to Downloader and choose <strong>Install</strong>. Afterward, you can turn that permission off.</li>
+        <li>Open Streambert from <strong>Apps</strong> or <strong>Settings → Apps → See all apps → Streambert → Open</strong>, then follow the <a href="#tmdb">free TMDB setup</a>.</li>
       </ol>
       <details>
-        <summary>Wireless pairing isn’t available on my phone</summary>
+        <summary>Install free from a Windows, Mac, or Linux computer</summary>
         <p>Use a computer on the same network and install Google’s <a href="https://developer.android.com/tools/releases/platform-tools">Platform-Tools</a>. Open a terminal in the Platform-Tools folder and put the APK there. On Windows PowerShell, use <code>.\adb</code> in place of <code>adb</code>. On macOS or Linux, use <code>./adb</code> if ADB is outside your PATH.</p>
         <ol class="steps">
+          <li>On the TV, go to <strong>Settings → System → About</strong> on Google TV or <strong>Settings → Device Preferences → About</strong> on Android TV. Highlight <strong>Android TV OS build</strong> or <strong>Build</strong> and press the center button seven times. Go back and open <strong>Developer options</strong>. Enable <strong>Wireless debugging</strong> or <strong>Network debugging</strong>.</li>
           <li>For <strong>Wireless debugging</strong>, open <strong>Pair device with pairing code</strong>. Run <code>adb pair TV_IP:PAIRING_PORT</code> using the values shown in that dialog. Enter the six-digit code when asked.</li>
           <li>Run <code>adb connect TV_IP:CONNECTION_PORT</code> using <strong>IP address &amp; port</strong> on the main Wireless debugging screen. The connection port can differ from the pairing port. For older <strong>Network debugging</strong> setups, skip pairing and connect with the port the TV uses, usually <code>5555</code>.</li>
           <li>Check <code>adb devices</code> for the TV marked <code>device</code>, then run <code>adb -s TV_IP:CONNECTION_PORT install -r Streambert-TV-Fire-OS.apk</code> with the address shown in that list.</li>
         </ol>
+        <p>Open Streambert and turn off debugging when you’re done.</p>
       </details>
       <details>
-        <summary>My TV only offers USB debugging or can’t be reached</summary>
+        <summary>Transfer the APK from an Android phone or USB drive</summary>
         <p>With an Android phone, you can transfer the APK using <a href="https://play.google.com/store/apps/details?id=com.yablio.sendfilestotv">Send Files to TV</a>. Install it on both devices, choose <strong>Receive</strong> on the TV and <strong>Send</strong> on the phone, then select the APK and your TV. On the TV, open the received APK from Downloads with a file manager that supports APK installation. If prompted, allow <strong>Install unknown apps</strong> for the file manager and turn that permission off afterward.</p>
         <p>Try installing the APK from a USB drive if your TV has a USB port for storage and a file manager that can open APKs. Copy the APK to the drive, open it on the TV, and if prompted enable <strong>Install unknown apps</strong> for that file manager. Turn that permission off after installing. A USB debugging switch alone may leave network access unavailable.</p>
         <p>For network setup, check that the TV and phone or computer are on the same home network, avoid guest Wi-Fi, and keep the pairing screen open while entering the code. <a href="https://developer.android.com/tools/adb">Google’s ADB instructions</a></p>
@@ -85,21 +85,29 @@
     </section>
 
     <section id="fire" class="shell section guide" aria-labelledby="fire-title">
-      <span class="badge ready">Phone install</span>
+      <span class="badge ready">Free install options</span>
       <h2 id="fire-title">Fire TV (Fire OS)</h2>
-      <p>Use an iPhone or Android phone and the same home network as your TV. On a Fire TV, check <strong>Settings → My Fire TV → About</strong>. If it says <strong>Vega OS</strong>, use the <a href="#other">Vega section</a>.</p>
+      <p>Check <strong>Settings → My Fire TV → About</strong>. If it says <strong>Vega OS</strong>, use the <a href="#other">Vega section</a>.</p>
       <div class="actions">
-        <a class="button primary" href="downloads/Streambert-Fire-TV-Phone-Kit.zip?v=3" download>Download kit with Fire TV instructions</a>
+        <a class="button primary" href="downloads/Streambert-Fire-TV-Phone-Kit.zip?v=4" download>Download kit with Fire TV instructions</a>
         <a class="button subtle" href="downloads/Streambert-TV-Fire-OS.apk?v=3" download>APK only</a>
         <a class="button subtle" href="downloads/Start-here-Fire-TV.txt">Read the Fire TV checklist</a>
       </div>
+      <h3>Install free with the Fire TV remote</h3>
       <ol class="steps">
-        <li><strong>Save the APK to your phone.</strong> If you downloaded the kit, extract it first. Keep the APK in Files or Downloads.</li>
-        <li><strong>Enable debugging on your TV.</strong> Open <strong>My Fire TV → Developer Options → ADB Debugging</strong>. If the menu is hidden, highlight the device name under <strong>About</strong>, press Select seven times, then go Back.</li>
-        <li><strong>Connect from atvTools.</strong> Get it on <a href="https://apps.apple.com/app/atvtools/id1661419573">iPhone</a> or <a href="https://play.google.com/store/apps/details?id=dev.vodik7.atvtools">Android</a>. Select your TV and accept the debugging prompt. If it doesn’t appear, enter the TV’s network address in the app.</li>
-        <li><strong>Send the APK.</strong> In atvTools, choose <strong>Tools → Install</strong> and select the APK. Open Streambert from your TV’s apps list, then follow <a href="#tmdb">TMDB setup</a>. Turn debugging off when you’re done.</li>
+        <li>Search the Amazon Appstore on the Fire TV for <strong>Downloader by AFTVnews</strong> and choose <strong>Get</strong> if available. Open it and enter <code>otosanx.github.io/streambert-tv-guide/</code> in the address field. Select <strong>Fire TV (Fire OS)</strong> under Devices, then choose <strong>APK only</strong>.</li>
+        <li>If asked, allow Downloader under <strong>Settings → My Fire TV → Developer Options → Install unknown apps</strong>. If Developer Options is hidden, highlight your device name under <strong>About</strong>, press Select seven times, then go back. Older software may call the permission <strong>Apps from Unknown Sources</strong>.</li>
+        <li>Go back to Downloader, reopen the downloaded APK if needed, and select <strong>Install</strong>. Turn off the install permission after setup. Open Streambert from <strong>Your Apps &amp; Channels</strong> or <strong>Settings → Applications → Manage Installed Applications → Streambert → Launch application</strong>, then follow <a href="#tmdb">TMDB setup</a>.</li>
       </ol>
-      <p class="fine">This is the same APK used on Android TV. Fire OS playback and next-episode autoplay still need a Fire TV device test. The iPhone phone tool is a paid app. <a href="https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device">Amazon’s Fire TV instructions</a></p>
+      <details>
+        <summary>Downloader is unavailable. Install free from a computer</summary>
+        <ol class="steps">
+          <li>Download <a href="https://developer.android.com/tools/releases/platform-tools">Google Platform-Tools</a>, extract the files, put the APK in that folder, and open a terminal there. Use <code>.\adb</code> on Windows PowerShell or <code>./adb</code> on macOS or Linux.</li>
+          <li>On Fire TV, turn on <strong>My Fire TV → Developer Options → ADB Debugging</strong> and follow any install permission prompt. Find its IP address under <strong>My Fire TV → About → Network</strong>. Put the computer on the same home network.</li>
+          <li>Run <code>adb connect FIRE_TV_IP:5555</code> with the Fire TV’s IP. Accept the prompt on the TV. Check <code>adb devices</code> for the Fire TV marked <code>device</code>, then run <code>adb -s FIRE_TV_IP:5555 install -r Streambert-TV-Fire-OS.apk</code>. Turn off debugging when done.</li>
+        </ol>
+      </details>
+      <p class="fine">Fire OS playback and next-episode autoplay still need a Fire TV device test. <a href="https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device">Amazon’s Fire TV instructions</a></p>
     </section>
 
     <section id="roku" class="shell section guide" aria-labelledby="roku-title">
@@ -151,8 +159,9 @@
             <li><strong>Create a free account.</strong> Go to <a href="https://www.themoviedb.org/signup">TMDB signup</a> and verify your email if prompted, or <a href="https://www.themoviedb.org/login">sign in</a> to your existing account.</li>
             <li><strong>Request free personal API access.</strong> Scan the QR or open <a href="https://www.themoviedb.org/settings/api">Settings → API</a>. If you don’t have access yet, select the request link and choose <strong>Personal use only</strong> (the developer or non-commercial option if the label differs). Accept the terms, fill out the applicable required fields, and submit. For a description, you can write “Personal use of the Streambert TV catalog to browse and search movie and TV metadata.” If the request form is difficult to use on a phone, open it on a computer.</li>
             <li><strong>Copy the API Read Access Token.</strong> Return to <a href="https://www.themoviedb.org/settings/api">Settings → API</a> and copy the entire long token, which typically begins with <code>eyJ</code>. The short <strong>API Key</strong> shown on the same page is a different credential. Keep the token private. You can use the same token on your own TVs.</li>
-            <li><strong>Enter it in Streambert.</strong> On Android TV or Fire OS, focus the token field, paste with the atvTools phone keyboard, and select <strong>Save and continue</strong>. If the token is already on the TV clipboard, select <strong>Paste from TV clipboard</strong>. On Roku, choose <strong>TMDB token → Continue</strong> after entering the token. Try the Roku mobile remote’s keyboard if it’s offered, or use the on-screen keyboard.</li>
+            <li><strong>Enter it in Streambert.</strong> Select the token field on the TV. For Android or Google TV, try the keyboard in the free <a href="https://support.google.com/googletv/answer/11136134">Google TV phone remote</a>. For Fire OS, try the free <a href="https://digprjsurvey.amazon.com/csad/help/node/TtsAzTRhSQ38wfm2D7">Amazon Fire TV phone remote</a>. If the keyboard offers paste, paste the token there. Otherwise use the TV keyboard or a physical keyboard where supported. Choose <strong>Save and continue</strong> on Android TV or Fire OS. On Roku, use <strong>TMDB token → Continue</strong> and try the Roku phone remote’s keyboard if it’s offered.</li>
           </ol>
+          <p class="fine">To pair a phone remote, put the phone and TV on the same Wi-Fi, select your TV in the remote app, and enter the code shown on the TV if prompted. Open the token field on the TV to bring up text entry.</p>
           <p class="fine"><a href="https://developer.themoviedb.org/docs/faq">TMDB’s free-use terms and FAQ</a> · <a href="https://github.com/truelockmc/streambert/blob/main/tmdb-tutorial.md">Original illustrated walkthrough</a> · <a href="downloads/Start-here-TMDB.txt">Printable checklist</a></p>
         </div>
         <figure><img src="tmdb-setup-qr.png" width="160" height="160" alt="QR code for TMDB API settings"><figcaption>Scan with your phone camera</figcaption></figure>
@@ -162,6 +171,7 @@
     <section class="shell section" aria-labelledby="help-title">
       <h2 id="help-title">Troubleshooting</h2>
       <details><summary>My phone can’t find the TV</summary><p>Check that both devices are on the same home network. Guest networks can isolate devices. Confirm debugging is on and try entering the TV’s network address directly.</p></details>
+      <details><summary>Do I need atvTools?</summary><p>Use the free options above for installation and token entry. <a href="https://atvtools.app/">atvTools</a> is an optional alternative. It is a paid app on iPhone. The Android version has ads and an optional premium unlock.</p></details>
       <details><summary>The TV says the file can’t be installed</summary><p>Check the TV’s operating system and use its matching file. Fire OS needs the extracted APK. Roku’s developer installer needs the original Roku ZIP. If Android reports a signing conflict, save your settings before removing the older copy.</p></details>
       <details><summary>Streambert rejected my TMDB token</summary><p>Open TMDB Settings → API and copy the entire <strong>API Read Access Token</strong> again. Make sure the TV has internet access. If your Roku accepts the token but playback doesn’t start when you browse a title, use <strong>Open video URL</strong> for direct playback. Roku’s catalog is a browsing and search preview.</p></details>
       <details><summary>The regular player didn’t start the next episode</summary><p>In Streambert settings, enable <strong>Autoplay Next Episode</strong> and set <strong>Countdown Duration</strong> above zero. Start a regular TV episode with another aired episode in the same season and let it finish. Autoplay needs the playback source to expose the end of the video. Press Back during the countdown to cancel.</p></details>

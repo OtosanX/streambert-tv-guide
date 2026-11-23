@@ -4,31 +4,17 @@ Use Streambert-TV-Fire-OS.apk. The shared APK works on NVIDIA Shield
 running Android TV and is also packaged for Fire OS. Other Android TV
 models may have different settings. The APK is installed on the TV.
 
-1. Save the APK to Files or Downloads on your iPhone or Android phone.
-   If you downloaded the kit, extract the ZIP first. Install atvTools
-   from https://atvtools.app/ and connect the phone and TV to the same
-   home network. On iPhone, allow Local Network access if prompted.
-   Check your phone's app store for pricing.
-2. On Google TV go to Settings > System > About. On Android TV look
-   under Settings > Device Preferences > About. Highlight Android TV
-   OS build or Build and press the center button seven times. Go back
-   one screen and open Developer options.
-3. Choose the connection type your TV offers.
-   - Wireless debugging: turn it on, then open Pair device with pairing
-     code. In atvTools, use wireless pairing if offered and enter the
-     TV's pairing address, port, and six-digit code. If unavailable,
-     use the computer fallback below.
-   - Network debugging: turn it on and select the TV in atvTools, or
-     add its address manually. Find the address in Network & Internet
-     or About > Status. Use the TV's port, or 5555 if using older network
-     debugging without a displayed port. Accept the prompt on the TV.
-4. In atvTools, select your TV, then go to Tools > Install and select
-   Streambert-TV-Fire-OS.apk. Open Streambert from Apps, or look in
-   Settings > Apps > See all apps > Streambert > Open.
-5. Follow Start-here-TMDB.txt to get your free personal access token.
-   Paste it with the atvTools phone keyboard, choose Save and continue,
-   and check that the catalog and search load. Turn off debugging after
-   setup.
+FREE INSTALL WITH YOUR TV REMOTE
+
+1. On the TV, install Downloader by AFTVnews from Google Play if
+   available. Open it and enter otosanx.github.io/streambert-tv-guide/
+   in its address field. Choose Install on Android TV > Download APK only.
+2. Open the downloaded APK. If asked, allow Install unknown apps for
+   Downloader in Settings, then return to Downloader and choose Install.
+   You can turn the permission off after installing.
+3. Open Streambert from Apps, or look in Settings > Apps > See all apps
+   > Streambert > Open. Follow Start-here-TMDB.txt for free catalog setup
+   and phone keyboard instructions.
 
 TEST NEXT-EPISODE AUTOPLAY
 
@@ -38,7 +24,7 @@ episode in the same season. Seek near the end and let the episode finish.
 The next episode should open after the countdown. Press Back during
 the countdown to cancel. This was confirmed on NVIDIA Shield.
 
-COMPUTER FALLBACK
+FREE COMPUTER INSTALL
 
 Download and extract Google's Platform-Tools:
 https://developer.android.com/tools/releases/platform-tools
@@ -46,6 +32,11 @@ Put the APK in the platform-tools folder. Open a terminal there.
 In Windows PowerShell replace adb with .\adb. On macOS/Linux use ./adb
 if adb is outside your PATH.
 
+- On Google TV go to Settings > System > About. On Android TV, look
+  under Settings > Device Preferences > About. Highlight Android TV
+  OS build or Build, press the center button seven times, then go back
+  to Developer options. Enable Wireless debugging or Network debugging.
+  Put the TV and computer on the same home network.
 - Wireless debugging: open Pair device with pairing code on the TV
   and run adb pair TV_IP:PAIRING_PORT with the address shown in that
   dialog. Enter the six-digit pairing code at the prompt.
@@ -56,6 +47,7 @@ if adb is outside your PATH.
 - Run adb devices. When your TV appears with status device, run
   adb -s TV_IP:CONNECTION_PORT install -r Streambert-TV-Fire-OS.apk
   using the exact TV address and port shown in the list.
+- Open Streambert and turn off debugging when you are done.
 
 IF THE TV DOESN'T CONNECT
 
@@ -77,3 +69,6 @@ IF THE TV DOESN'T CONNECT
 
 Website: https://otosanx.github.io/streambert-tv-guide/#android
 Google ADB guide: https://developer.android.com/tools/adb
+
+atvTools is optional. Its iPhone app is paid. The Android version has
+ads and an optional premium unlock.

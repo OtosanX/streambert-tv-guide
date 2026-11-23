@@ -1,85 +1,52 @@
-INSTALL STREAMBERT FROM YOUR PHONE
+INSTALL STREAMBERT ON FIRE TV FOR FREE
 
-This guide is for Fire TV devices running Fire OS. For Android TV or
-Google TV, open Start-here-Android-TV.txt in this kit. Both guides use
-the same APK. No computer or USB cable is needed for the Fire OS steps.
+On the TV, check Settings > My Fire TV > About. Some models call this
+menu Device & Software. This guide is for Fire OS. For Vega OS or
+other TV systems, see the device list on the website. Android TV and
+Google TV users can open Start-here-Android-TV.txt in this kit.
 
-CHECK YOUR FIRE TV FIRST
+INSTALL WITH THE FIRE TV REMOTE
 
-On the TV, open Settings > My Fire TV > About. Some devices call
-this menu Device & Software. Check the device and software version.
-If it says Vega OS, stop here. This Android installer will not work.
-The Fire TV Stick 4K Select is one example of a Vega model.
-Amazon model list: https://developer.amazon.com/docs/device-specs/identify-fire-tv-devices
+1. Search the Amazon Appstore on the Fire TV for Downloader by
+   AFTVnews and choose Get if available. Open Downloader.
+2. Enter otosanx.github.io/streambert-tv-guide/ in its address field.
+   Under Devices, select Fire TV (Fire OS), then choose APK only.
+3. If prompted, open Settings > My Fire TV > Developer Options >
+   Install unknown apps and allow Downloader. On older models this
+   may be called Apps from Unknown Sources. If Developer Options is
+   hidden, go to About, highlight your Fire TV name, press the center
+   button seven times, then go back.
+4. Return to Downloader, reopen the APK if needed, and choose Install.
+   You can turn off Downloader's install permission afterward.
+5. Open Streambert from Your Apps & Channels. If needed, go to
+   Settings > Applications > Manage Installed Applications >
+   Streambert > Launch application. Follow Start-here-TMDB.txt for the
+   free personal token and the Amazon Fire TV phone keyboard option.
 
-1. GET THE TWO FILES READY ON YOUR PHONE
+FREE COMPUTER INSTALL IF DOWNLOADER IS UNAVAILABLE
 
-   • Open this ZIP in Files on iPhone or your file manager on Android
-     and extract it. Keep Streambert-TV-Fire-OS.apk in that folder.
-     If you downloaded just the APK, find it in Downloads. Don't
-     open the APK on your phone. You will choose it in atvTools.
-   • Install atvTools by tvDev on the PHONE. The iPhone version is a
-     paid app. Check the price in the App Store before buying.
+1. Download and extract Google Platform-Tools:
+   https://developer.android.com/tools/releases/platform-tools
+   Put Streambert-TV-Fire-OS.apk in the platform-tools folder and open
+   a terminal there. Replace adb with .\adb on Windows PowerShell or
+   ./adb on macOS/Linux.
+2. Connect the computer and Fire TV to the same home network.
+   Turn on Settings > My Fire TV > Developer Options > ADB Debugging
+   and follow any install permission prompt. Find the Fire TV IP
+   address under Settings > My Fire TV > About > Network.
+3. Run adb connect FIRE_TV_IP:5555 with the address from the TV and
+   accept the debugging prompt on the TV. Run adb devices and check
+   that the Fire TV is marked device.
+4. Run adb -s FIRE_TV_IP:5555 install -r Streambert-TV-Fire-OS.apk
+   with the same address. Open Streambert and turn off debugging.
+   If the TV reports a signature conflict with an older copy, removing
+   the old app can erase its settings and history.
 
-     iPhone: https://apps.apple.com/app/atvtools/id1661419573
-     Android: https://play.google.com/store/apps/details?id=dev.vodik7.atvtools
+atvTools is optional. Its iPhone app is paid. The Android version has
+ads and an optional premium unlock.
 
-2. LET YOUR PHONE CONNECT TO THE FIRE TV
+The shared APK was tested on NVIDIA Shield. Fire OS playback still
+needs a device test.
 
-   • Connect your phone and Fire TV to the same home network. A guest
-     network may block the devices from seeing each other.
-   • On the Fire TV, go to Settings > My Fire TV > Developer Options.
-     If Developer Options is missing, open About instead, highlight
-     the Fire TV's device name, press the center button seven times,
-     then go Back once.
-   • Turn on ADB Debugging. If your Fire TV shows a general Apps from
-     Unknown Sources switch, follow Amazon's instructions for enabling
-     it during installation.
-
-3. SEND AND INSTALL STREAMBERT
-
-   • Open atvTools on your phone. On iPhone, tap Allow if it asks for
-     Local Network access. Select your Fire TV from the device list.
-   • If it doesn't appear, use the add-by-address option. The Fire TV
-     address is shown under Settings > My Fire TV > About > Network.
-     Type that number in atvTools. If it asks for a port, use 5555.
-   • Look at the TV. When the debugging prompt appears, choose Allow
-     while you are connecting from your own phone.
-   • In atvTools, open Tools > Install. Select Streambert-TV-Fire-OS.apk
-     from Files or Downloads. Wait for the success message.
-
-4. OPEN THE APP ON THE TV
-
-   • Find Streambert under Your Apps & Channels. If it doesn't show,
-     open Settings > Applications > Manage Installed Applications >
-     Streambert > Launch application.
-   • On the first screen, scan the QR code with your phone camera.
-     Follow the steps next to it to get your TMDB API Read Access
-     Token. It lets Streambert load titles and artwork.
-   • Tap the token field on the TV. In atvTools, use the phone
-     keyboard to paste the token, then choose Save and continue
-     on the TV. If the token is already in the TV's clipboard,
-     use Paste from TV clipboard instead.
-   • Open Start-here-TMDB.txt in this kit for the free personal API
-     signup, or visit https://otosanx.github.io/streambert-tv-guide/#tmdb
-   • Once the app opens, turn ADB Debugging back off. Streambert
-     works without it. Turn it back on only when installing an update.
-
-IF SOMETHING DOESN'T WORK
-
-   • Phone can't see the TV: recheck the network, ADB Debugging, and
-     the Allow prompt on the TV. Try entering the address manually.
-   • Can't find the APK: extract the ZIP first and look in Files or
-     Downloads. atvTools needs the .apk file, not the .zip.
-   • Install reports a conflict with an existing copy: keep the
-     existing app for now. An uninstall can erase settings and history.
-   • Vega OS, Samsung Tizen, and LG webOS: this APK won't install on
-     those systems. Use a separate compatible streaming device if one
-     is available.
-
-This kit has not been tested on a Fire TV in this session. The APK was
-built and verified, and its phone transfer uses the documented atvTools
-and Amazon methods. Player compatibility still needs a Fire OS test.
-
-Amazon setup guide: https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device
-Phone tool guide: https://atvtools.app/
+Guide: https://otosanx.github.io/streambert-tv-guide/#fire
+Amazon ADB guide: https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device
